@@ -1,64 +1,158 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
-// import 'package:flutter_application_1/state_view.dart';
-// import 'region.dart';
 import 'package:grouped_list/grouped_list.dart';
+import 'welcomepage.dart';
 
-List _dataDummyRegion = [
-  {"userId": 1, "id": 1, "title": "quidem molestiae enim"},
-  {"userId": 1, "id": 2, "title": "sunt qui excepturi placeat culpa"},
-  {"userId": 1, "id": 3, "title": "omnis laborum odio"},
-];
-void main() => runApp(MyApp());
+void main() {
+  runApp(MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: SplashPage(duration: 2, goToPage: WelcomePage())));
+}
 
-class MyApp extends StatelessWidget {
+class SplashPage extends StatefulWidget {
+  // This widget is the root of your application.
+
+  int duration = 0;
+  Widget goToPage;
+
+  SplashPage({Key? key, this.duration = 2, required this.goToPage})
+      : super(key: key);
+
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Bhaarat Cuisines',
-      theme: ThemeData(
-        primarySwatch: Colors.cyan,
-        accentColor: Colors.amber,
-        canvasColor: Color.fromRGBO(255, 254, 229, 1),
-        fontFamily: 'Raleway',
-        textTheme: ThemeData.light().textTheme.copyWith(
-            bodyText1: TextStyle(
-              color: Color.fromRGBO(20, 51, 51, 1),
-            ),
-            bodyText2: TextStyle(
-              color: Color.fromRGBO(20, 51, 51, 1),
-            ),
-            subtitle1: TextStyle(
-              fontSize: 20,
-              fontFamily: 'RobotoCondensed',
-              fontWeight: FontWeight.bold,
-            )),
-      ),
-      home: GroupListViewPage(),
-    );
+  State<SplashPage> createState() => _SplashPageState();
+}
+
+class _SplashPageState extends State<SplashPage> {
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Timer(Duration(seconds: widget.duration), () {
+      Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (_) => widget.goToPage));
+    });
   }
-}
 
-class GroupListViewPage extends StatefulWidget {
-  @override
-  _GroupListViewPageState createState() => _GroupListViewPageState();
-}
-
-class _GroupListViewPageState extends State<GroupListViewPage> {
   @override
   Widget build(BuildContext context) {
+    // Future.delayed(Duration(seconds: this.widget.duration), () {
+    //   Navigator.push(
+    //       context, MaterialPageRoute(builder: (context) => this.widget.goToPage));
+    // });
     return Scaffold(
-      appBar: AppBar(title: Text('Bhaarat CUisines')),
-      body: GroupedListView<dynamic, String>(
-        elements: _dataDummyRegion,
-        groupBy: (element) => element['group'],
-        groupSeparatorBuilder: (String groupByValue) => Text(groupByValue),
-        itemBuilder: (context, dynamic element) => Text(element['title']),
-        itemComparator: (item1, item2) =>
-            item1['title'].compareTo(item2['title']), // optional
-        useStickyGroupSeparators: true, // optional
-        floatingHeader: true, // optional
-        order: GroupedListOrder.ASC, // optional
+        body: Container(
+      color: Color.fromARGB(255, 0, 7, 9),
+      alignment: Alignment.center,
+      child: Icon(
+        Icons.favorite,
+        color: Color.fromARGB(255, 240, 239, 239),
+        size: 100,
       ),
-    );
+    ));
   }
 }
+
+// List _data = [
+//   {
+//     'id': 's2',
+//     'title': 'Madhya Pradesh',
+//     'color': Colors.purple,
+//     'group': 'Central India'
+//   },
+//   {
+//     'id': 's2',
+//     'title': 'Chhattisgarh',
+//     'color': Colors.purple,
+//     'group': 'Central India'
+//   },
+//   {
+//     'id': 's1',
+//     'title': 'Rajasthan',
+//     'color': Colors.amber,
+//     'group': 'Western Indian'
+//   },
+//   {
+//     'id': 's1',
+//     'title': 'Maharashtra',
+//     'color': Colors.amber,
+//     'group': 'Western Indian'
+//   },
+//   {
+//     'id': 's1',
+//     'title': 'Gujarat',
+//     'color': Colors.amber,
+//     'group': 'Western Indian'
+//   },
+// ];
+
+// class WelcomePage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     // TODO: implement build
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Bhaarat Cuisines'),
+//         backgroundColor: Color.fromARGB(255, 100, 24, 44),
+//         elevation: 2,
+//       ),
+//       body: GroupedListView<dynamic, String>(
+//         elements: _data,
+//         groupBy: (item) => item['group'],
+//         groupSeparatorBuilder: (groupValue) => Padding(
+//           padding: EdgeInsets.all(8),
+//           child: Row(
+//             mainAxisAlignment: MainAxisAlignment.start,
+//             crossAxisAlignment: CrossAxisAlignment.center,
+//             children: [
+//               Flexible(
+//                 child: Row(
+//                   children: [
+//                     Container(
+//                       margin: EdgeInsets.only(left: 8, right: 8),
+//                       child: Text(
+//                         groupValue,
+//                         textAlign: TextAlign.start,
+//                         style: TextStyle(
+//                             fontSize: 14, fontWeight: FontWeight.bold),
+//                       ),
+//                     )
+//                   ],
+//                 ),
+//               )
+//             ],
+//           ),
+//         ),
+//         itemBuilder: (context, item) {
+//           return Card(
+//             elevation: 8.0,
+//             margin: EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+//             child: Container(
+//               child: ListTile(
+//                 contentPadding:
+//                     EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+//                 title: Text(
+//                   item['title'],
+//                   style: TextStyle(fontSize: 16),
+
+//                   //padding: EdgeInsets.all(8),
+//                   // child: Row(
+//                   //   mainAxisAlignment: MainAxisAlignment.center,
+//                   //   crossAxisAlignment: CrossAxisAlignment.center,
+//                   // children: [
+
+//                   // ],
+//                 ),
+//               ),
+//             ),
+//           );
+//         },
+//         groupComparator: (group1, group2) => group1.compareTo(group2),
+//         itemComparator: (item1, item2) =>
+//             item1['title'].compareTo(item2['title']),
+//         useStickyGroupSeparators: true,
+//         floatingHeader: false,
+//         order: GroupedListOrder.ASC,
+//       ),
+//     );
+//   }
+// }
