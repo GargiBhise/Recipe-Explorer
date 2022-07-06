@@ -15,180 +15,166 @@ class SecondPage extends StatelessWidget {
             child: Image.network(
               item['image'],
               width: size.width,
-              height: size.height * 0.3,
+              height: size.height * 0.4,
               fit: BoxFit.fill,
             ),
           ),
           Expanded(
             child: SingleChildScrollView(
               child: Padding(
-                  padding: EdgeInsets.only(top: 10, left: 20, right: 20),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Card(
-                        elevation: 8.0,
-                        margin:
-                            EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                        child: Container(
-                          child: ListTile(
-                            contentPadding: EdgeInsets.symmetric(
-                                horizontal: 20.0, vertical: 10.0),
-                            title: Text(
-                              'Recipe of ' + item['cName'],
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
+                padding: EdgeInsets.only(top: 10, left: 20, right: 20),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Card(
+                      color: Colors.tealAccent[50],
+                      elevation: 8.0,
+                      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                      child: Container(
+                        child: ListTile(
+                          // contentPadding: EdgeInsets.symmetric(
+                          //     horizontal: 10.0, vertical: 5.0),
+                          title: Text(
+                            'Recipe of ' + item['cName'],
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),
-                      SizedBox(height: size.height * 0.02),
-                      Card(
-                        elevation: 10.0,
-                        margin:
-                            EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                        child: Container(
-                          child: ListTile(
-                            contentPadding: EdgeInsets.symmetric(
-                                horizontal: 20.0, vertical: 10.0),
-                            title: const Text(
-                              'Ingredients',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                            subtitle: Column(
-                              children: [
-                                Text(
-                                  item['ingredients'][0],
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: 16),
-                                ),
-                                SizedBox(height: 5),
-                                Text(
-                                  item['ingredients'][1],
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: 16),
-                                ),
-                                SizedBox(height: 5),
-                                Text(
-                                  item['ingredients'][2],
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: 16),
-                                ),
-                                SizedBox(height: 5),
-                                Text(
-                                  item['ingredients'][3],
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: 16),
-                                ),
-                                SizedBox(height: 5),
-                                Text(
-                                  item['ingredients'][4],
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: 16),
-                                ),
-                                SizedBox(height: 5),
-                                Text(
-                                  item['ingredients'][5],
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: 16),
-                                ),
-                                SizedBox(height: 5),
-                                Text(
-                                  item['ingredients'][6],
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: 16),
-                                ),
-                                SizedBox(height: 5),
-                                Text(
-                                  item['ingredients'][7],
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: 16),
-                                ),
-                                // SizedBox(height: 5),
-                                // Text(
-                                //   item['ingredients'][8],
-                                //   textAlign: TextAlign.center,
-                                //   style: TextStyle(fontSize: 16),
-                                // ),
-                                // Text(
-                                //   item['ingredients'][9],
-                                //   textAlign: TextAlign.center,
-                                //   style: TextStyle(fontSize: 16),
-                                // ),
-                                // Text(
-                                //   item['ingredients'][10],
-                                //   textAlign: TextAlign.center,
-                                //   style: TextStyle(fontSize: 16),
-                                // ),
-                                // Text(
-                                //   item['ingredients'][11],
-                                //   textAlign: TextAlign.center,
-                                //   style: TextStyle(fontSize: 16),
-                                // ),
-                              ],
-                            ),
+                    ),
+                    SizedBox(height: size.height * 0.02),
+                    Card(
+                      elevation: 10.0,
+                      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                      child: Container(
+                        child: ListTile(
+                          contentPadding: EdgeInsets.symmetric(
+                              horizontal: 20.0, vertical: 10.0),
+                          title: const Text(
+                            'Ingredients',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
                           ),
-                        ),
-                      ),
-                      SizedBox(height: size.height * 0.02),
-                      Card(
-                        elevation: 8.0,
-                        margin:
-                            EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                        child: Container(
-                          child: ListTile(
-                            contentPadding: EdgeInsets.symmetric(
-                                horizontal: 20.0, vertical: 10.0),
-                            title: Text(
-                              'Recipe',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                            subtitle: Column(
-                              children: [
+                          subtitle: Column(
+                            children: [
+                              for (var i = 0;
+                                  i < item['ingredients'].length;
+                                  i++)
                                 Text(
-                                  item['recipe'],
-                                  textAlign: TextAlign.justify,
-                                  style: TextStyle(fontSize: 16),
-                                ),
-                                const Text(
-                                  'Note',
-                                  textAlign: TextAlign.left,
+                                  item['ingredients'][i],
+                                  textAlign: TextAlign.center,
                                   style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.normal,
+                                      color: Color.fromARGB(166, 10, 10, 10)),
                                 ),
-                                Text(
-                                  item['note'],
-                                  textAlign: TextAlign.justify,
-                                  style: TextStyle(fontSize: 16),
-                                ),
-                              ],
-                            ),
+                              SizedBox(height: 5),
+                            ],
                           ),
                         ),
                       ),
-                      SizedBox(height: size.height * 0.02),
-                      InkWell(
+                    ),
+                    SizedBox(height: size.height * 0.02),
+                    Card(
+                      elevation: 8.0,
+                      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                      child: Container(
+                        child: ListTile(
+                          contentPadding: EdgeInsets.symmetric(
+                              horizontal: 20.0, vertical: 10.0),
+                          title: Text(
+                            'Recipe',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                          subtitle: Column(
+                            children: [
+                              Text(
+                                item['recipe'],
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    color: Color.fromARGB(174, 0, 0, 0)),
+                              ),
+                              const Text(
+                                'Note',
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                    fontSize: 18, fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                item['note'],
+                                textAlign: TextAlign.left,
+                                style: TextStyle(fontSize: 16),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: size.height * 0.02),
+                    Card(
+                      elevation: 8.0,
+                      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                      child: InkWell(
                         onTap: () async {
                           final Uri url = Uri.parse(item['link']);
                           if (!await launchUrl(url))
                             throw 'Could not launch $url';
                         },
-                        child: Text(
-                          item['link'],
-                          style: const TextStyle(
-                              fontWeight: FontWeight.w500,
-                              color: Colors.blue,
-                              fontSize: 18),
+                        child: Container(
+                          child: ListTile(
+                            title: Text(
+                              'Link to youtube Video -',
+                              //Icon(Icons.keyboard_arrow_right_rounded,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                            subtitle: Column(
+                              children: [
+                                Text(
+                                  item['link'],
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.blue,
+                                      fontSize: 18),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
-                    ],
-                  )),
+                    )
+
+                    // elevation: 8.0,
+                    // margin:
+                    //     EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                    // child: InkWell(
+                    //   onTap: () async {
+                    //     final Uri url = Uri.parse(item['link']);
+                    //     if (!await launchUrl(url))
+                    //       throw 'Could not launch $url';
+                    //   },
+                    //   child: Container(
+                    //     child: Text(
+                    //       item['link'],
+                    //       style: const TextStyle(
+                    //           fontWeight: FontWeight.w500,
+                    //           color: Colors.blue,
+                    //           fontSize: 18),
+                    //       textAlign: TextAlign.center,
+                    //     ),
+                    //   ),
+                    //         ),
+                    //   ),
+                  ],
+                ),
+              ),
             ),
           ),
         ],
