@@ -1,5 +1,5 @@
-# Recipe Explorer App
 <div style="display: flex; align-items: center; margin-bottom: 20px;">
+    <h1> Recipe Explorer App </h1>
     <img src="assets/Logo.png" alt="App Icon" width="100" style="margin-left: 20px;">
 </div>
 
