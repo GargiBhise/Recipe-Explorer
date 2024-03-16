@@ -1,7 +1,4 @@
-<div style="display: flex; align-items: center; margin-bottom: 20px;">
-    <h1> Recipe Explorer App </h1>
-    <img src="assets/Logo.png" alt="App Icon" width="100" style="margin-left: 20px;">
-</div>
+<h1>Recipe Explorer App <img align="right" src="assets/Logo.png" alt="Alt Text"></h1>
 
 ## Overview
 Recipe Explorer is a mobile application aimed at travelers and food enthusiasts eager to explore the diverse culinary landscape of India. It serves as a comprehensive guide, providing users with a curated list of famous Indian cuisines categorized by state, along with their recipes. Whether you're craving the fiery flavors of Punjab or the aromatic delicacies of Kerala, Recipe Explorer has you covered.
