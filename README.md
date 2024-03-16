@@ -26,7 +26,8 @@ Recipe Explorer is a mobile application aimed at travelers and food enthusiasts 
 
 ## Screenshots
 ### Home Screen
-![Home Screen](https://static.wixstatic.com/media/cde0fd_0b8cf218f4454c28a664d4a72957c3ae~mv2.jpg/v1/fill/w_489,h_1304,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/cde0fd_0b8cf218f4454c28a664d4a72957c3ae~mv2.jpg)
+![Home Screen]### Home Screen
+<img src="https://static.wixstatic.com/media/cde0fd_0b8cf218f4454c28a664d4a72957c3ae~mv2.jpg/v1/fill/w_489,h_1304,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/cde0fd_0b8cf218f4454c28a664d4a72957c3ae~mv2.jpg" alt="Home Screen" width="250">
 
 ### Recipe Details
 ![Recipe Details](https://static.wixstatic.com/media/cde0fd_602dfaf21e944b0cac626a4004ee30f8~mv2.jpg/v1/fill/w_474,h_1304,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/cde0fd_602dfaf21e944b0cac626a4004ee30f8~mv2.jpg)
