@@ -1,6 +1,6 @@
-<div style="display: flex; align-items: center; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; margin-bottom: 20px;">
     <h1>Recipe Explorer - Cookbook App</h1>
-    <img src="assets/Logo.png" alt="App Icon" width="100" style="margin-left: 20px;">
+    <img src="assets/Logo.png" alt="App Icon" width="200" style="margin-left: 20px;">
 </div>
 
 ## Overview
